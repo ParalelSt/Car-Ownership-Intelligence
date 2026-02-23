@@ -1,51 +1,81 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  /* Colors */
-  --color-primary: #1e3a8a;
-  --color-accent: #0f766e;
-  --color-bg: #f3f4f6;
-  --color-text-primary: #111827;
-  --color-text-secondary: #6b7280;
+  /* ===== Colors ===== */
+  --color-bg: #f3f4f6;                   /* Page background */
+  --color-primary: #1e3a8a;              /* Top nav & main accent */
+  --color-accent: #2563eb;               /* Highlight / active elements */
+  --color-footer: #1c1c20;               /* Optional footer */
+  --color-surface-primary: #ffffff;      /* Cards, inputs */
+  --color-surface-secondary: #e5e7eb;    /* Bottom nav background, alternate surfaces */
+  --color-text-primary: #111827;         /* Main text */
+  --color-text-secondary: #6b7280;       /* Secondary text / inactive icons */
+  --color-text-muted: #8e8e93;           /* Muted text / hints */
+  --color-border: #d1d5db;               /* Default borders */
+  --color-border-subtle: #e5e7eb;        /* For subtle dividers / inputs */
 
-  /* Border radius */
-  --radius-base: 0.5rem;
-  --radius-lg: 1rem;
-
-  /* Shadows */
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.1);
-  --shadow-elevated: 0 4px 8px rgba(0,0,0,0.15);
-
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-s: 0.5rem;
-  --space-m: 1rem;
-  --space-l: 2rem;
-
-  /* Typography */
+  /* ===== Typography ===== */
   --font-base: 'Inter', sans-serif;
-
+  --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
   --text-2xl: 2rem;
   --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+
+  --leading-xs: 1rem;
+  --leading-sm: 1.25rem;
+  --leading-base: 1.5rem;
+  --leading-lg: 1.75rem;
+  --leading-xl: 2rem;
+  --leading-2xl: 2.5rem;
+  --leading-3xl: 3rem;
+
+  /* ===== Spacing ===== */
+  --space-xs: 0.25rem;
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+  --space-xl: 4rem;
+
+  /* ===== Border Radius ===== */
+  --radius-base: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* ===== Shadows ===== */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-elevated: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-@layer base {
-  body {
-    font-family: var(--font-base);
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
-    margin: 0;
-    padding: 0;
+@layer components {
+  .heading-xs { font-size: var(--text-xs); line-height: var(--leading-xs); font-weight: 500; }
+  .heading-sm { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 500; }
+  .heading-base { font-size: var(--text-base); line-height: var(--leading-base); font-weight: 500; }
+  .heading-lg { font-size: var(--text-lg); line-height: var(--leading-lg); font-weight: 600; }
+  .heading-xl { font-size: var(--text-xl); line-height: var(--leading-xl); font-weight: 600; }
+  .heading-2xl { font-size: var(--text-2xl); line-height: var(--leading-2xl); font-weight: 700; }
+  .heading-3xl { font-size: var(--text-3xl); line-height: var(--leading-3xl); font-weight: 700; }
+
+  a {
+    text-decoration: none;
   }
 
-  input {
-    background-color: transparent;
+  a:hover {
+    text-decoration: none;
+  }
+
+  a:focus {
     outline: none;
-    border: none;
+  }
+
+  .bottom-nav-item {
+    color: var(--color-text-secondary);
+  }
+
+  .bottom-nav-item.active {
+    color: var(--color-accent);
   }
 }
-

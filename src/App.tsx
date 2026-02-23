@@ -1,15 +1,14 @@
 import Nav from "./components/BottomNav";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
-    <div className="flex flex-col h-screen">
-      <main className="flex-1 overflow-auto p-4">
-        <Router>
-          <Routes>
-            <Route path="/" />
-          </Routes>
-        </Router>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1 p-4 pb-20 overflow-auto">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
       </main>
       <Nav />
     </div>
