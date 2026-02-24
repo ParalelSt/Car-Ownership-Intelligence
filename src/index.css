@@ -4,7 +4,7 @@
   /* ===== Colors ===== */
   --color-bg: #f3f4f6;                   /* Page background */
   --color-primary: #1e3a8a;              /* Top nav & main accent */
-  --color-accent: #2563eb;               /* Highlight / active elements */
+  --color-accent: #3b66b7;               /* Highlight / active elements */
   --color-footer: #1c1c20;               /* Optional footer */
   --color-surface-primary: #ffffff;      /* Cards, inputs */
   --color-surface-secondary: #e5e7eb;    /* Bottom nav background, alternate surfaces */
@@ -46,18 +46,15 @@
   --radius-full: 9999px;
 
   /* ===== Shadows ===== */
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-card: 0 2px 8px 1px rgba(0,0,0,0.15);
   --shadow-elevated: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-@layer components {
-  .heading-xs { font-size: var(--text-xs); line-height: var(--leading-xs); font-weight: 500; }
-  .heading-sm { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 500; }
-  .heading-base { font-size: var(--text-base); line-height: var(--leading-base); font-weight: 500; }
-  .heading-lg { font-size: var(--text-lg); line-height: var(--leading-lg); font-weight: 600; }
-  .heading-xl { font-size: var(--text-xl); line-height: var(--leading-xl); font-weight: 600; }
-  .heading-2xl { font-size: var(--text-2xl); line-height: var(--leading-2xl); font-weight: 700; }
-  .heading-3xl { font-size: var(--text-3xl); line-height: var(--leading-3xl); font-weight: 700; }
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
 
   a {
     text-decoration: none;
@@ -70,6 +67,16 @@
   a:focus {
     outline: none;
   }
+}
+
+@layer components {
+  .heading-xs { font-size: var(--text-xs); line-height: var(--leading-xs); font-weight: 500; }
+  .heading-sm { font-size: var(--text-sm); line-height: var(--leading-sm); font-weight: 500; }
+  .heading-base { font-size: var(--text-base); line-height: var(--leading-base); font-weight: 500; }
+  .heading-lg { font-size: var(--text-lg); line-height: var(--leading-lg); font-weight: 600; }
+  .heading-xl { font-size: var(--text-xl); line-height: var(--leading-xl); font-weight: 600; }
+  .heading-2xl { font-size: var(--text-2xl); line-height: var(--leading-2xl); font-weight: 700; }
+  .heading-3xl { font-size: var(--text-3xl); line-height: var(--leading-3xl); font-weight: 700; }
 
   .bottom-nav-item {
     color: var(--color-text-secondary);
@@ -77,5 +84,20 @@
 
   .bottom-nav-item.active {
     color: var(--color-accent);
+  }
+
+  .card {
+    @apply bg-surface-primary;
+    padding: var(--space-s);
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-card);
+  }
+
+  .button {
+    @apply bg-accent;
+    padding: var(--space-s);
+    border-radius: var(--radius-base);
+    font-weight: var(--font-weight-bold);
+    color: white;
   }
 }
