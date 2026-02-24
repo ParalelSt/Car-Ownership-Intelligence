@@ -7,16 +7,34 @@ const Card = ({ children, className }: CardProps) => {
   return <div className={`card w-full h-full ${className}`}>{children}</div>;
 };
 
-const CardHeader = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mb-3">{children}</div>;
+const CardHeader = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className: string;
+}) => {
+  return <div className={`mb-3 ${className}`}>{children}</div>;
 };
 
-const CardContent = ({ children }: { children: React.ReactNode }) => {
-  return <div>{children}</div>;
+const CardContent = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className: string;
+}) => {
+  return <div className={`${className}`}>{children}</div>;
 };
 
-const CardFooter = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mt-4">{children}</div>;
+const CardFooter = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className: string;
+}) => {
+  return <div className={`mt-4 ${className}`}>{children}</div>;
 };
 
 Card.Header = CardHeader;
