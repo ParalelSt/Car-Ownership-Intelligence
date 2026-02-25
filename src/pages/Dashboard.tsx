@@ -12,7 +12,7 @@ const Dashboard = () => {
   const averageConsumption = calculateAvgConsumption(mockFuelLogs);
 
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex flex-col w-full h-full gap-4">
       <FuelLogCard
         costPerKm={costPerKm}
         costPerMonth={monthlyCost}

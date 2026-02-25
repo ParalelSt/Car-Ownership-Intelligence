@@ -4,7 +4,9 @@ interface CardProps {
 }
 
 const Card = ({ children, className }: CardProps) => {
-  return <div className={`card w-full h-full ${className}`}>{children}</div>;
+  return (
+    <div className={`card w-full h-full p-3 ${className}`}>{children}</div>
+  );
 };
 
 const CardHeader = ({
