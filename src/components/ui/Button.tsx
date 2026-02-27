@@ -1,12 +1,27 @@
 interface ButtonProps {
   children: React.ReactNode;
-  bg_color?: string;
+  buttonVariant: "primary" | "secondary";
+  type?: "submit" | "reset" | "button" | undefined;
+  onClick?: () => void;
+  disabled?: boolean;
   className?: string;
 }
 
-const Button = ({ children, bg_color, className }: ButtonProps) => {
+const Button = ({
+  children,
+  buttonVariant,
+  type,
+  onClick,
+  disabled,
+  className,
+}: ButtonProps) => {
   return (
-    <button className={`${className} w-full button bg-${bg_color}`}>
+    <button
+      className={`${className} flex justify-center items-center w-full h-9 button-${buttonVariant}`}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

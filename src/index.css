@@ -6,13 +6,18 @@
   --color-primary: #1e3a8a;              /* Top nav & main accent */
   --color-accent: #3b66b7;               /* Highlight / active elements */
   --color-footer: #1c1c20;               /* Optional footer */
+
   --color-surface-primary: #ffffff;      /* Cards, inputs */
   --color-surface-secondary: #e5e7eb;    /* Bottom nav background, alternate surfaces */
+
   --color-text-primary: #111827;         /* Main text */
   --color-text-secondary: #6b7280;       /* Secondary text / inactive icons */
   --color-text-muted: #8e8e93;           /* Muted text / hints */
+
   --color-border: #d1d5db;               /* Default borders */
   --color-border-subtle: #e5e7eb;        /* For subtle dividers / inputs */
+
+  --color-error: #dc2626;
 
   /* ===== Typography ===== */
   --font-base: 'Inter', sans-serif;
@@ -46,8 +51,8 @@
   --radius-full: 9999px;
 
   /* ===== Shadows ===== */
-  --shadow-card: 0 2px 8px 1px rgba(0,0,0,0.15);
-  --shadow-elevated: 0 4px 8px rgba(0,0,0,0.15);
+  --shadow-card: 0 2px 8px 1px rgba(0,0,0,0.05);
+  --shadow-elevated: 0 4px 8px rgba(0,0,0,0.04);
 }
 
 @layer base {
@@ -68,6 +73,15 @@
 
   a:focus {
     outline: none;
+  }
+
+  input {
+    background-color: transparent;
+    outline: none;
+  }
+
+  input:focus {
+    
   }
 }
 
@@ -116,19 +130,27 @@
     font-weight: var(--font-weight-semibold);
   }
 
-  .button {
+  .button-primary {
     @apply bg-accent;
     padding: var(--space-s);
     border-radius: var(--radius-base);
     font-size: var(--text-sm);
     font-weight: var(--font-weight-bold);
-    color: white;
+    color: var(--color-text-primary);
+  }
+
+  .button-secondary {
+    @apply bg-surface-secondary;
+    padding: var(--space-s);
+    border-radius: var(--radius-base);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
   }
 
   .card-content-title {
     font-size: var(--text-sm);
     line-height: var(--leading-sm);
     font-weight: 500;
-    color: var(--color-accent);
   }
 }
