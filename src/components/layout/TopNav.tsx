@@ -1,16 +1,16 @@
 import { useLocation } from "react-router-dom";
 import BackButton from "../ui/BackButton";
 
+const routeConfig: Record<string, { title: string; showBack: boolean }> = {
+  "/": { title: "Dashboard", showBack: false },
+  "/fuel": { title: "Fuel", showBack: true },
+  "/service": { title: "Service", showBack: true },
+  "/vehicles": { title: "Vehicles", showBack: true },
+  "/profile": { title: "Profile", showBack: true },
+};
+
 const TopNav = () => {
   const location = useLocation();
-
-  const routeConfig: Record<string, { title: string; showBack: boolean }> = {
-    "/": { title: "Dashboard", showBack: false },
-    "/fuel": { title: "Fuel", showBack: true },
-    "/service": { title: "Service", showBack: true },
-    "/vehicles": { title: "Vehicles", showBack: true },
-    "/profile": { title: "Profile", showBack: true },
-  };
 
   const config = routeConfig[location.pathname] ?? {
     title: "",

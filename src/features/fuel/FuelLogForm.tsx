@@ -48,7 +48,7 @@ const FuelLogForm = () => {
         />
         <BorderLine />
         <Button
-          className="h-12 text-base text-white mt-2"
+          className="h-12 text-base mt-2"
           buttonVariant="primary"
           type="submit"
         >
