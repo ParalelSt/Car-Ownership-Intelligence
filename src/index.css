@@ -61,6 +61,7 @@
     padding: 0;
 
     background-color: var(--color-bg);
+    color-scheme: light;
   }
 
   a {
@@ -114,6 +115,12 @@
     padding: var(--space-s);
     border-radius: var(--radius-base);
     box-shadow: var(--shadow-card);
+  }
+
+  .card-text-sm {
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-normal);
   }
 
   .card-text-base {
@@ -174,5 +181,17 @@
     font-size: var(--text-sm);
     line-height: var(--leading-sm);
     font-weight: 500;
+  }
+
+  .link {
+    color: var(--color-accent);
+  }
+
+  .link:hover {
+    color:#2f559e;
+  }
+
+  .link:active {
+    color:#2b4f93;
   }
 }

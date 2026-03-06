@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 60" width="80" height="60">
+  <!-- Gauge arc: semi-circle with colored segments -->
+  <!-- Background/shadow arc -->
+  <path d="M 8 42 A 32 32 0 0 1 72 42" fill="none" stroke="#dde3ee" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Colored gauge segments (left to right: teal, green, yellow, orange, red) -->
+  <!-- Teal segment -->
+  <path d="M 8 42 A 32 32 0 0 1 17.5 20.5" fill="none" stroke="#4ECDC4" stroke-width="5" stroke-linecap="round"/>
+  <!-- Green segment -->
+  <path d="M 17.5 20.5 A 32 32 0 0 1 30 12" fill="none" stroke="#7ED97F" stroke-width="5" stroke-linecap="round"/>
+  <!-- Yellow segment -->
+  <path d="M 30 12 A 32 32 0 0 1 50 12" fill="none" stroke="#FFD93D" stroke-width="5" stroke-linecap="round"/>
+  <!-- Orange segment -->
+  <path d="M 50 12 A 32 32 0 0 1 62.5 20.5" fill="none" stroke="#FF9A3C" stroke-width="5" stroke-linecap="round"/>
+  <!-- Red segment -->
+  <path d="M 62.5 20.5 A 32 32 0 0 1 72 42" fill="none" stroke="#FF6B6B" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Car body -->
+  <!-- Main lower body -->
+  <rect x="14" y="36" width="52" height="14" rx="4" ry="4" fill="white"/>
+  <!-- Cabin / roof -->
+  <path d="M 24 36 Q 27 26 34 24 L 46 24 Q 53 26 56 36 Z" fill="white"/>
+
+  <!-- Windows -->
+  <!-- Left window -->
+  <path d="M 27 36 Q 29 29 34 27 L 38 27 L 38 36 Z" fill="#c8d8ef" opacity="0.7"/>
+  <!-- Right window -->
+  <path d="M 53 36 Q 51 29 46 27 L 42 27 L 42 36 Z" fill="#c8d8ef" opacity="0.7"/>
+  <!-- Window divider -->
+  <line x1="40" y1="27" x2="40" y2="36" stroke="#a0b4cc" stroke-width="1"/>
+
+  <!-- Wheels -->
+  <circle cx="24" cy="50" r="5.5" fill="#3a3a4a"/>
+  <circle cx="24" cy="50" r="2.5" fill="#c0c8d8"/>
+  <circle cx="56" cy="50" r="5.5" fill="#3a3a4a"/>
+  <circle cx="56" cy="50" r="2.5" fill="#c0c8d8"/>
+
+  <!-- Headlight -->
+  <rect x="14" y="38" width="5" height="3" rx="1.5" fill="#FFE97A" opacity="0.9"/>
+  <!-- Tail light -->
+  <rect x="61" y="38" width="5" height="3" rx="1.5" fill="#FF6B6B" opacity="0.9"/>
+</svg>

@@ -14,9 +14,9 @@ const CardHeader = ({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) => {
-  return <div className={`mb-3 ${className}`}>{children}</div>;
+  return <div className={`${className} flex flex-col mb-3`}>{children}</div>;
 };
 
 const CardContent = ({
@@ -24,9 +24,9 @@ const CardContent = ({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) => {
-  return <div className={`${className}`}>{children}</div>;
+  return <div className={`${className} flex flex-col`}>{children}</div>;
 };
 
 const CardFooter = ({
@@ -34,9 +34,9 @@ const CardFooter = ({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) => {
-  return <div className={`mt-4 ${className}`}>{children}</div>;
+  return <div className={`${className} flex flex-col mt-4`}>{children}</div>;
 };
 
 Card.Header = CardHeader;
