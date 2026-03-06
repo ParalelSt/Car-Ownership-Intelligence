@@ -3,4 +3,7 @@ export type Vehicle = {
   make: string;
   model: string;
   year: number;
+  color?: string;
+  licensePlate?: string;
+  fuelType: "petrol" | "diesel" | "electric" | "hybrid";
 };
