@@ -76,13 +76,14 @@
     outline: none;
   }
 
-  input {
+  input, select {
     background-color: transparent;
     border: none;
     outline: none;
+    font-weight: inherit;
   }
 
-  input:focus {
+  input:focus, select:focus {
     outline: none;
     border: none;
   }
@@ -97,6 +98,10 @@
   .heading-2xl { font-size: var(--text-2xl); line-height: var(--leading-2xl); font-weight: 700; }
   .heading-3xl { font-size: var(--text-3xl); line-height: var(--leading-3xl); font-weight: 700; }
 
+  select:has(option[value=""]:checked) {
+    color: var(--color-text-muted);
+  }
+
 }
 
 @layer components {
@@ -108,7 +113,9 @@
     color: var(--color-accent);
   }
 
-
+  select {
+    font-weight: var(--font-weight-semibold);
+  }
 
   .card {
     background-color: var(--color-surface-primary);

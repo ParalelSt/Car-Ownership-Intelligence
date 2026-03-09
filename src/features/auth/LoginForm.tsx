@@ -13,6 +13,7 @@ const LoginForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>({ resolver: zodResolver(loginSchema) });
 
@@ -22,6 +23,7 @@ const LoginForm = () => {
   const onSubmit = async (data: LoginFormData) => {
     await login(data.email, data.password);
     navigate("/");
+    reset();
   };
 
   return (

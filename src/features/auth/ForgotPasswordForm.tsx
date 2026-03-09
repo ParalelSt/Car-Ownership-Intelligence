@@ -14,6 +14,7 @@ const ForgotPasswordForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ForgotPasswordFormData>({
     resolver: zodResolver(forgotPasswordSchema),
@@ -21,6 +22,7 @@ const ForgotPasswordForm = () => {
 
   const onSubmit = (data: ForgotPasswordFormData) => {
     console.log(data);
+    reset();
   };
 
   return (

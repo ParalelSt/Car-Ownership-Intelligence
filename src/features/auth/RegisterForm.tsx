@@ -14,11 +14,13 @@ const RegisterForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<RegisterFormData>({ resolver: zodResolver(registerSchema) });
 
   const onSubmit = (data: RegisterFormData) => {
     console.log(data);
+    reset();
   };
 
   return (

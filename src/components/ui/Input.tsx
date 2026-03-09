@@ -45,9 +45,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {label}
         </label>
         <div
-          className={`flex items-center mt-2 mb-2 p-2 w-full h-10 border ${error ? "border-error" : "border-border"} rounded-base text-sm placeholder:text-text-muted`}
+          className={`flex items-center mt-2 mb-2 p-2 w-full h-10 border ${error ? "border-error" : "border-border"} rounded-base text-sm`}
         >
-          {icon ? icon : ""}
+          {icon}
           <input
             className={`${icon ? "ml-1" : ""} ${isPassword ? "mr-1" : ""} w-full h-full text-sm placeholder:text-text-muted`}
             ref={ref}
