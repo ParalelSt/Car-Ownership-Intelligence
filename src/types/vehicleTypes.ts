@@ -6,4 +6,5 @@ export type Vehicle = {
   color?: string;
   licensePlate?: string;
   fuelType: "petrol" | "diesel" | "electric" | "hybrid";
+  odometerValue: number;
 };

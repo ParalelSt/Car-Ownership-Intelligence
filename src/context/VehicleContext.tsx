@@ -20,7 +20,10 @@ export const VehicleProvider = ({
     useState<VehicleContextType["currentVehicle"]>(null);
 
   const addVehicle = (data: Omit<Vehicle, "id">) => {
-    const newVehicle: Vehicle = { ...data, id: crypto.randomUUID() };
+    const newVehicle: Vehicle = {
+      ...data,
+      id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+    };
     setVehicles((prev) => [...prev, newVehicle]);
     if (vehicles.length === 0) setCurrentVehicle(newVehicle);
   };

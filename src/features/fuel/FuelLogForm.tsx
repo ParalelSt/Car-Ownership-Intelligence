@@ -21,6 +21,9 @@ const FuelLogForm = () => {
 
   return (
     <Card>
+      <Card.Header>
+        <h2 className="heading-base">Fuel Statistics</h2>
+      </Card.Header>
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         <Input
           className="card-content-title"

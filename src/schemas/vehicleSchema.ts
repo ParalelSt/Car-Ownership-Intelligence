@@ -13,6 +13,9 @@ export const vehicleSchema = z.object({
   fuelType: z.enum(["petrol", "diesel", "electric", "hybrid"], {
     error: "Please select a fuel type",
   }),
+  odometerValue: z
+    .number({ error: "Please enter a valid odometer value" })
+    .min(1),
 });
 
 export type VehicleData = z.infer<typeof vehicleSchema>;

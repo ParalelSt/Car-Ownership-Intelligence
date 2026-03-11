@@ -29,6 +29,9 @@ const VehicleForm = () => {
 
   return (
     <Card>
+      <Card.Header>
+        <h2 className="heading-base">Vehicle Details</h2>
+      </Card.Header>
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         <Input
           className="card-content-title"
@@ -53,6 +56,14 @@ const VehicleForm = () => {
           inputMode="decimal"
           error={errors.year?.message}
           {...register("year", { valueAsNumber: true })}
+        />
+        <Input
+          className="card-content-title"
+          label="Odometer Value"
+          placeholder={"Enter the odometer value"}
+          inputMode="decimal"
+          error={errors.odometerValue?.message}
+          {...register("odometerValue", { valueAsNumber: true })}
         />
         <Select
           label="Fuel Type"
