@@ -22,12 +22,11 @@ const FuelLogItem = ({
       <Card.Header>
         <div className="flex">
           <h2 className="heading-base">{date}</h2>
-          <span className="ml-auto text-primary">
+          <span className="heading-base ml-auto text-primary">
             {"$" + totalCost.toFixed(2)}
           </span>
         </div>
       </Card.Header>
-
       <Card.Content>
         <div className="flex">
           <h3 className="flex items-center gap-2">
@@ -44,10 +43,9 @@ const FuelLogItem = ({
           </h3>
         </div>
       </Card.Content>
-
       <Card.Footer>
-        <span className="heading-sm tracking-wider text-text-secondary">
-          {"$" + pricePerLitre.toFixed(2) + " " + "/L"}
+        <span className="heading-xs tracking-wider text-text-muted">
+          {"$" + pricePerLitre.toFixed(2) + " " + "/ L"}
         </span>
       </Card.Footer>
     </Card>
