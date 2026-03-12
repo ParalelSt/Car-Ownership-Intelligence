@@ -1,7 +1,7 @@
 import Card from "@/components/ui/Card";
 import { useFuel } from "@/context/FuelContext";
 import { useVehicle } from "@/context/VehicleContext";
-import FuelLogCard from "@/features/dashboards/FuelLogCard";
+import FuelLogCard from "@/features/fuel/FuelLogCard";
 import VehicleCard from "@/features/vehicles/VehicleCard";
 import {
   calculateAvgConsumption,
