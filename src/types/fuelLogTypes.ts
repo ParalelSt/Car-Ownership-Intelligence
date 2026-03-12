@@ -2,8 +2,8 @@ export type fuelLog = {
   id: string;
   vehicleId: string;
   litres: number;
-  pricePerLiter: number;
+  pricePerLitre: number;
   totalCost: number;
-  kilometersDriven: number;
+  kilometresDriven: number;
   date: string;
 };

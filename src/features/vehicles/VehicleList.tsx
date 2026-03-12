@@ -25,6 +25,7 @@ const VehicleList = () => {
           key={v.id}
           vehicle={v}
           isActive={v.id === currentVehicle?.id}
+          showActiveBorder={true}
         />
       ))}
     </div>

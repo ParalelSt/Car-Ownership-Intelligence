@@ -2,9 +2,9 @@ import BorderLine from "@/components/ui/BorderLIne";
 import Card from "@/components/ui/Card";
 
 interface FuelLogCardProps {
-  costPerKm: string;
-  costPerMonth?: string;
-  averageConsumption: string;
+  costPerKm: string | null;
+  costPerMonth: string | null;
+  averageConsumption: string | null;
 }
 
 const FuelLogCard = ({

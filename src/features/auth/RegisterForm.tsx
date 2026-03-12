@@ -1,6 +1,7 @@
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import Input from "@/components/ui/Input";
+import { useAuth } from "@/context/AuthContext";
 import {
   registerSchema,
   type RegisterFormData,
@@ -8,7 +9,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { EnvelopeIcon, LockKeyIcon, UserIcon } from "@phosphor-icons/react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const {
@@ -18,8 +19,12 @@ const RegisterForm = () => {
     formState: { errors, isSubmitting },
   } = useForm<RegisterFormData>({ resolver: zodResolver(registerSchema) });
 
+  const { register: authRegister } = useAuth();
+  const navigate = useNavigate();
+
   const onSubmit = (data: RegisterFormData) => {
-    console.log(data);
+    authRegister(data.email, data.username, data.password);
+    navigate("/");
     reset();
   };
 

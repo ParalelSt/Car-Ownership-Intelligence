@@ -1,5 +1,8 @@
-import { mockFuelLogs } from "@/data/mockFuelLogs";
+import Card from "@/components/ui/Card";
+import { useFuel } from "@/context/FuelContext";
+import { useVehicle } from "@/context/VehicleContext";
 import FuelLogCard from "@/features/dashboards/FuelLogCard";
+import VehicleCard from "@/features/vehicles/VehicleCard";
 import {
   calculateAvgConsumption,
   calculateCostPerKm,
@@ -7,9 +10,13 @@ import {
 } from "@/lib/fuelCalculations";
 
 const Dashboard = () => {
-  const costPerKm = calculateCostPerKm(mockFuelLogs);
-  const monthlyCost = calculateMonthlyCost(mockFuelLogs);
-  const averageConsumption = calculateAvgConsumption(mockFuelLogs);
+  const { fuelLogs } = useFuel();
+
+  const costPerKm = calculateCostPerKm(fuelLogs);
+  const monthlyCost = calculateMonthlyCost(fuelLogs);
+  const averageConsumption = calculateAvgConsumption(fuelLogs);
+
+  const { currentVehicle } = useVehicle();
 
   return (
     <div className="flex flex-col w-full h-full gap-4">
@@ -18,6 +25,18 @@ const Dashboard = () => {
         costPerMonth={monthlyCost}
         averageConsumption={averageConsumption}
       />
+      {currentVehicle ? (
+        <VehicleCard vehicle={currentVehicle} isActive={true} />
+      ) : (
+        <Card className="flex flex-col items-center">
+          <Card.Header>
+            <h2 className="heading-base text-text-primary">No vehicles yet.</h2>
+          </Card.Header>
+          <span className="heading-sm text-text-secondary">
+            Add your first vehicle to start tracking fuel and maintenance.
+          </span>
+        </Card>
+      )}
     </div>
   );
 };
