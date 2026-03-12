@@ -15,7 +15,7 @@ export const vehicleSchema = z.object({
   }),
   odometerValue: z
     .number({ error: "Please enter a valid odometer value" })
-    .min(1),
+    .min(1, "Odometer value must be greater than 0"),
 });
 
 export type VehicleData = z.infer<typeof vehicleSchema>;
