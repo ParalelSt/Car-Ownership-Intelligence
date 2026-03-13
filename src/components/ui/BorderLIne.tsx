@@ -1,5 +1,9 @@
-const BorderLine = () => {
-  return <div className="mt-2 mb-3 w-full h-px bg-border"></div>;
+interface BorderLineProps {
+  className?: string;
+}
+
+const BorderLine = ({ className }: BorderLineProps) => {
+  return <div className={`mt-2 mb-3 h-px bg-border-subtle ${className}`}></div>;
 };
 
 export default BorderLine;
