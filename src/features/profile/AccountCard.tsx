@@ -27,7 +27,7 @@ const AccountCard = () => {
       />
       <SettingsNavigationItem
         icon={<PlugChargingIcon size={24} className="text-accent" />}
-        settingLabel="Log Out"
+        settingLabel="Connected Devices"
         onClick={temp}
       />
       <SettingsNavigationItem
