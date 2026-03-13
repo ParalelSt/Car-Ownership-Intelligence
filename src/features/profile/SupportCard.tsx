@@ -9,7 +9,7 @@ const SupportCard = () => {
 
   return (
     <Card>
-      <h2 className="heading-base">Support</h2>
+      <h2 className="mb-3 heading-base">Support</h2>
       <BorderLine className="-mx-3 w-[calc(100%+1.5rem)]" />
       <SettingsNavigationItem
         icon={<PowerIcon size={24} className="text-red-500" />}

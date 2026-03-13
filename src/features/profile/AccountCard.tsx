@@ -15,7 +15,7 @@ const AccountCard = () => {
 
   return (
     <Card>
-      <h2 className="heading-base">Account</h2>
+      <h2 className="mb-3 heading-base">Account</h2>
       <BorderLine className="-mx-3 w-[calc(100%+1.5rem)]" />
       <SettingsNavigationItem
         icon={<UserIcon size={24} className="text-accent" />}
