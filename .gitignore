@@ -21,5 +21,10 @@ data
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
+
+# .NET
+CarOwnershipAPI/bin/
+CarOwnershipAPI/obj/
+*.user
+CarOwnershipAPI/appsettings.Development.json
