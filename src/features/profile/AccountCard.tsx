@@ -6,11 +6,10 @@ import {
   PlugChargingIcon,
   UserIcon,
 } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 const AccountCard = () => {
-  //TEMP FUNCTION
-
-  const temp = () => {};
+  const navigate = useNavigate();
 
   return (
     <Card className="overflow-hidden">
@@ -18,23 +17,23 @@ const AccountCard = () => {
       <SettingsNavigationItem
         icon={<UserIcon size={24} className="text-accent" />}
         settingLabel="Account Settings"
-        onClick={temp}
+        onClick={() => navigate("/account-settings")}
       />
       <SettingsNavigationItem
         icon={<BellIcon size={24} className="text-accent" />}
         settingLabel="Notification Settings"
-        onClick={temp}
+        onClick={() => navigate("/notification-settings")}
       />
       <SettingsNavigationItem
         icon={<PlugChargingIcon size={24} className="text-accent" />}
         settingLabel="Connected Devices"
-        onClick={temp}
+        onClick={() => navigate("/connected-devices")}
       />
       <SettingsNavigationItem
         icon={<ChartBarIcon size={24} className="text-accent" />}
         settingLabel="Usage Statistics"
         className="-mb-3"
-        onClick={temp}
+        onClick={() => navigate("/usage-statistics")}
       />
     </Card>
   );
