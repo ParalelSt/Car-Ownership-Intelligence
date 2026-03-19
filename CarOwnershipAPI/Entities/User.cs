@@ -11,4 +11,6 @@ public class User
     public DateTime CreatedAt { get; set; }
 
     public ICollection<Vehicle> Vehicles { get; set; } = [];
+    public Guid? CurrentVehicleId { get; set; }
+    public Vehicle? CurrentVehicle { get; set; }
 }

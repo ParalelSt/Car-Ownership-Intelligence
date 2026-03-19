@@ -4,6 +4,6 @@ namespace CarOwnershipAPI.Services;
 
 public interface IAuthService
 {
-    Task<AuthResponseDto> Register(RegisterRequest request);
-    Task<AuthResponseDto> Login(LoginRequest request);
+    Task<AuthResponseDto> Register(RegisterRequestDto requestDto);
+    Task<AuthResponseDto> Login(LoginRequestDto requestDto);
 }

@@ -15,5 +15,7 @@ public class AppDbContext: DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Vehicle>().Property(v => v.FuelType).HasConversion<string>();
+        modelBuilder.Entity<User>().HasOne(u => u.CurrentVehicle).WithMany().HasForeignKey(u => u.CurrentVehicleId)
+            .OnDelete(DeleteBehavior.SetNull);
     }
 }

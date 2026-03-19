@@ -17,25 +17,25 @@ public class AuthService: IAuthService
         _tokenService = tokenService;
     }
 
-    public async Task<AuthResponseDto> Register(RegisterRequest request)
+    public async Task<AuthResponseDto> Register(RegisterRequestDto requestDto)
     {
-        var existingUser = await _db.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+        var existingUser = await _db.Users.FirstOrDefaultAsync(u => u.Email == requestDto.Email);
 
         if (existingUser != null)
         {
             throw new CustomInvalidOperationException("Email already in use");
         }
 
-        if (request.Password != request.ConfirmPassword)
+        if (requestDto.Password != requestDto.ConfirmPassword)
         {
             throw new CustomInvalidOperationException("Passwords do not match");
         }
 
         var user = new User
         {
-            Email = request.Email,
-            Username = request.Username,
-            PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password)
+            Email = requestDto.Email,
+            Username = requestDto.Username,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(requestDto.Password)
         };
 
         _db.Users.Add(user);
@@ -51,14 +51,14 @@ public class AuthService: IAuthService
         };
     }
 
-    public async Task<AuthResponseDto> Login(LoginRequest request)
+    public async Task<AuthResponseDto> Login(LoginRequestDto requestDto)
     {
-        var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+        var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == requestDto.Email);
 
         if (user == null)
             throw new UnauthorizedException("Invalid credentials");
 
-        if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        if (!BCrypt.Net.BCrypt.Verify(requestDto.Password, user.PasswordHash))
             throw new UnauthorizedException("Invalid credentials");
 
         var token = _tokenService.GenerateAccessToken(user);
