@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const register = async (
     email: string,
     username: string,
-    password: string,
+    _password: string,
   ) => {
     setIsLoading(true);
 
